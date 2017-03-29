@@ -3,13 +3,14 @@ function agregarLista() {
   var nombreLista = document.getElementById("nuevaLista").value;
   var nombreTitulo = anterior.innerHTML = (nombreLista);
 
-  var seccion = document.getElementById("listas");
+  /*var seccion = document.getElementById("listas");
   var listaNueva = document.createElement("UL");
-  seccion.appendChild(listaNueva);
+  seccion.appendChild(listaNueva);*/
 
 }
 
 function agregarElemento() {
+  var lista = document.getElementById("lista");
   var elemento = document.createElement("LI");
   var texto = document.createTextNode(document.getElementById("nuevoPendiente").value);
 
