@@ -1,25 +1,34 @@
-function agregarLista() {
+//Esta función cambia el titulo de la lista
+function cambiarTitulo() {
   var anterior = document.getElementById("titulo");
   var nombreLista = document.getElementById("nuevaLista").value;
   var nombreTitulo = anterior.innerHTML = (nombreLista);
-
-  var seccion = document.getElementById("listas");
-  var listaNueva = document.createElement("UL");
-  seccion.appendChild(listaNueva);
-  
 }
 
-function agregarElemento() {
+//Esta funcion crea la lista y agrega elementos
+function crearLista() {
+  var nuevaLista = document.getElementById("listas");
+  var otraLista = document.createElement("UL");
   var lista = document.getElementById("lista");
   var elemento = document.createElement("LI");
   var texto = document.createTextNode(document.getElementById("nuevoPendiente").value);
 
+  nuevaLista.appendChild(otraLista);
   elemento.appendChild(texto);
-  lista.appendChild(elemento);
+  otraLista.appendChild(elemento);
 }
 
+//Esta funcion elimina los pendientes de la lista
+function eliminarPendientes() {
+  var seccion = document.getElementById("listas");
 
-//hacia abajo en este código traté de resolver el programa con POO
+  if (seccion.hasChildNodes()) {
+      seccion.removeChild(seccion.childNodes[3]);
+  }
+}
+
+//Aquí abajo traté de resolver el programa con POO
+
 /*function ListaPendientes() {
   this.pendiente = pendiente;
 }

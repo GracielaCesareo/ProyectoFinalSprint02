@@ -3,23 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>TRELLO</title>
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   </head>
   <body>
     <h1>Trello</h1>
     <section>
       <h3 id="titulo">Nueva Lista</h3>
       <section id="listas">
-        <ul id="lista"></ul>
+      <!--  <ul id="lista"></ul> -->
       </section>
       <h5>Agregar pendiente</h5>
       <input type="text" id="nuevoPendiente"></input>
-      <button type=button onclick="agregarElemento();">Crear pendiente</button>
+      <button type=button onclick="crearLista();">Crear pendiente</button>
+      <button type=button onclick="eliminarPendientes();">Eliminar Pendiente</button>
     </section>
     <hr>
     <section id="crearLista">
       <h5>Agregar Lista<h5>
       <input type="text" id="nuevaLista"></input>
-      <button type=button onclick="agregarLista();">Crear lista</button>
+      <button type=button onclick="cambiarTitulo();">Crear lista</button>
     </section>
     <script type="text/javascript" src="main.js"></script>
   </body>
