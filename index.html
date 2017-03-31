@@ -1,28 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>TRELLO</title>
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  </head>
-  <body>
-    <h1>Trello</h1>
-    <section>
-      <h3 id="titulo">Nueva Lista</h3>
-      <section id="listas">
-      <!--  <ul id="lista"></ul> -->
-      </section>
-      <h5>Agregar pendiente</h5>
-      <input type="text" id="nuevoPendiente"></input>
-      <button type=button onclick="crearLista();">Crear pendiente</button>
-      <button type=button onclick="eliminarPendientes();">Eliminar Pendiente</button>
-    </section>
-    <hr>
-    <section id="crearLista">
-      <h5>Agregar Lista<h5>
-      <input type="text" id="nuevaLista"></input>
-      <button type=button onclick="cambiarTitulo();">Crear lista</button>
-    </section>
-    <script type="text/javascript" src="main.js"></script>
-  </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Trello</title>
+</head>
+<body>
+    <header>
+        <h1>TRELLO</h1>
+    </header>
+        <article id="contenedorListas"> 
+          <!-- dentro de este elemento article se guardaran lista y elementos -->
+        </article>
+        <hr>
+
+        <label>Agregar Lista</label>
+        <input type="text" id="nuevaLista">
+        <input type="button" value="Crear Lista" onclick="agregarLista()">
+    <script src="main.js"></script>
+</body>
 </html>

@@ -1,54 +1,41 @@
-//Esta función cambia el titulo de la lista
-function cambiarTitulo() {
-  var anterior = document.getElementById("titulo");
-  var nombreLista = document.getElementById("nuevaLista").value;
-  var nombreTitulo = anterior.innerHTML = (nombreLista);
+function agregarLista(){
+//Crea una seccion a partir de la accion del input "nombreLista" y la asigna al elemento article
+   var nuevaLista = document.getElementById("nuevaLista");
+   var seccion = document.createElement("section");
+   seccion.id = Date.now();
+   document.getElementById("contenedorListas").appendChild(seccion);
+
+//Crea la lista y la agrega a la division
+   var lista  = document.createElement("ul");
+   var titulo = document.createElement("h3")
+   titulo.id =Date.now();
+   lista.id = Date.now();
+   seccion.appendChild(lista);
+   lista.innerHTML = nuevaLista.value + " " + "<button onclick='eliminar(this)'>x</button>";
+
+//Crea el input para tomar el valor de cada pendiente
+   var contenidoDelPendiente = document.createElement("input");
+   contenidoDelPendiente.setAttribute("type","text");
+   seccion.appendChild(contenidoDelPendiente);
+
+//Crea el boton para agregar cada pendiente
+   var nuevoPendiente = document.createElement("input");
+   nuevoPendiente.setAttribute("type","button");
+   nuevoPendiente.setAttribute("value","Crear pendiente");
+   seccion.appendChild(nuevoPendiente);
+
+//Funcion para crear cada elemento de la lista
+   nuevoPendiente.onclick = function(){
+                           var elementoLista= document.createElement("li");
+                           elementoLista.id = Date.now();
+                           lista.appendChild(elementoLista);
+                           elementoLista.innerHTML=contenidoDelPendiente.value + " " + "<button onclick='eliminar(this)'>x</button>";
+   }
 }
 
-//Esta funcion crea la lista y agrega elementos
-function crearLista() {
-  var nuevaLista = document.getElementById("listas");
-  var otraLista = document.createElement("UL");
-  var lista = document.getElementById("lista");
-  var elemento = document.createElement("LI");
-  var texto = document.createTextNode(document.getElementById("nuevoPendiente").value);
-
-  nuevaLista.appendChild(otraLista);
-  elemento.appendChild(texto);
-  otraLista.appendChild(elemento);
+ //Esta funcion elimina los pendientes y la lista
+function eliminar(elemento) {
+       var id = elemento.parentNode.getAttribute("id"); //"elemento" es el span, reconoce el id del padre
+       node = document.getElementById(id);//otorga mismo id al elemento creado y al span
+       node.parentNode.removeChild(node);//
 }
-
-//Esta funcion elimina los pendientes de la lista
-function eliminarPendientes() {
-  var seccion = document.getElementById("listas");
-
-  if (seccion.hasChildNodes()) {
-      seccion.removeChild(seccion.childNodes[3]);
-  }
-}
-
-//Aquí abajo traté de resolver el programa con POO
-
-/*function ListaPendientes() {
-  this.pendiente = pendiente;
-}
-
-var pendientes = [];
-
-function nuevoPendiente() {
-  var nuevo = document.getElementById("nuevoPendiente");
-
-  var pendiente = new ListaPendientes(nuevo.value);
-
-  pendientes.push(pendiente);
-}
-
-function lista() {
-  var lista = document.getElementById("listas");
-  var nuevaLista = document.createElement("ul");
-
-  pendientes.forEach(function(pendiente){
-    var item = document.createElement("li")
-    item.innerText = elemPendiente.nombre;
-  });
-}*/
